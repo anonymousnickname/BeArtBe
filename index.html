@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Roboto&display=swap" rel="stylesheet">
+    <title>BeArt</title>
+</head>
+<body>
+    <button class="button">
+        INFO
+    </button>
+    <div class="first-page">
+    <header class="header">
+        <h1 class="header__title">Be Art Balony i Dekoracje </h1>
+        <div class="header__img-wrap"></div>
+    </header>
+    <main class="main">
+        <h2 class="main__title">Skąd do nas trafiłeś?</h2>
+        <ul class="list">
+            <li class="list-item list-items" value="0" data-name="Instagram">
+                <span class="list-number">1</span>
+                <img class="list-img" src="./images/instagram.png" alt="Instagram">
+                <span class="list-text">Instagram</span>
+            </li>
+            <li class="list-item list-items" value="0" data-name="Facebook">
+                <span class="list-number">2</span>
+                <img class="list-img" src="./images/facebook.png" alt="Facebook">
+                <span class="list-text">Facebook</span>
+            </li>
+            <li class="list-item list-items" value="0" data-name="Google">
+                <span class="list-number">3</span>
+                <img class="list-img" src="./images/google.png" alt="Google">
+                <span class="list-text">Google</span>
+            </li>
+            <li class="list-item list-items" value="0" data-name="Z polecenia">
+                <span class="list-number">4</span>
+                <img class="list-img" src="./images/znajomi.png" alt="Znayomi">
+                <span class="list-text">Z polecenia</span>
+            </li>
+            <li class="list-item list-items" value="0" data-name="Inne">
+                <span class="list-number">5</span>
+                <img class="list-img" src="./images/inne.png" alt="Inne">
+                <span class="list-text">Inne</span>
+            </li>
+        </ul>
+    </main>
+</div>
+
+<div class="second-page disabled">
+    <header class="header">
+        <h1 class="header__title">Be Art Balony i Dekoracje </h1>
+        <div class="header__img-wrap"></div>
+    </header>
+    <main class="main">
+        <ul class="list">
+            <li class="list-item padding" value="0" data-name="Instagram">
+                <span class="number" id="numberInstagram"></span>
+                <img class="list-img" src="./images/instagram.png" alt="Instagram">
+                <span class="list-text">Instagram</span>
+            </li>
+            <li class="list-item padding" value="0" data-name="Facebook">
+                <span class="number" id="numberFacebook"></span>
+                <img class="list-img" src="./images/facebook.png" alt="Facebook">
+                <span class="list-text">Facebook</span>
+            </li>
+            <li class="list-item padding" value="0" data-name="Google">
+                <span class="number" id="numberGoogle"></span>
+                <img class="list-img" src="./images/google.png" alt="Google">
+                <span class="list-text">Google</span>
+            </li>
+            <li class="list-item padding" value="0" data-name="Z polecenia">
+                <span class="number" id="numberZpolecenia"></span>
+                <img class="list-img" src="./images/znajomi.png" alt="Z polecenia">
+                <span class="list-text">Z polecenia</span>
+            </li>
+            <li class="list-item padding" value="0" data-name="Inne">
+                <span class="number" id="numberInne"></span>
+                <img class="list-img" src="./images/inne.png" alt="Inne">
+                <span class="list-text">Inne</span>
+            </li>
+        </ul>
+    </main>
+</div>
+
+    <aside class="modal disabled" id="modal">
+        <h2 class="modal-title">Thank you for your choise.
+             Have a good day</h2>
+    </aside>
+    <script src="script.js"></script>
+</body>
+</html>
