@@ -52,7 +52,7 @@ items.forEach((item) => {
                 button.classList.remove('disabled')
                 firstPage.classList.remove('disabled');
                 modal.classList.add('disabled');
-            }, 2000)
+            }, 5000)
           }, 100)
     })
 })
