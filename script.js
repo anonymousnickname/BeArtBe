@@ -10,11 +10,24 @@ const numberGoogle = document.querySelector('#numberGoogle');
 const numberZpolecenia = document.querySelector('#numberZpolecenia');
 const numberInne = document.querySelector('#numberInne');
 
-numberInstagram.innerHTML = localStorage.getItem('Instagram');
-numberFacebook.innerHTML = localStorage.getItem('Facebook');
-numberGoogle.innerHTML = localStorage.getItem('Google');
-numberZpolecenia.innerHTML = localStorage.getItem('Z polecenia');
-numberInne.innerHTML = localStorage.getItem('Inne');
+if (localStorage.getItem('Instagram') || localStorage.getItem('Facebook') || localStorage.getItem('Google') || localStorage.getItem('Z polecenia') || localStorage.getItem('Inne')) {
+    numberInstagram.innerHTML = localStorage.getItem('Instagram');
+    numberFacebook.innerHTML = localStorage.getItem('Facebook');
+    numberGoogle.innerHTML = localStorage.getItem('Google');
+    numberZpolecenia.innerHTML = localStorage.getItem('Z polecenia');
+    numberInne.innerHTML = localStorage.getItem('Inne');
+} else {
+    localStorage.setItem('Instagram', numberInstagram.dataset.number);
+    localStorage.setItem('Facebook', numberFacebook.dataset.number);
+    localStorage.setItem('Google', numberGoogle.dataset.number);
+    localStorage.setItem('Z polecenia', numberZpolecenia.dataset.number);
+    localStorage.setItem('Inne', numberInne.dataset.number);
+    numberInstagram.innerHTML = localStorage.getItem('Instagram');
+    numberFacebook.innerHTML = localStorage.getItem('Facebook');
+    numberGoogle.innerHTML = localStorage.getItem('Google');
+    numberZpolecenia.innerHTML = localStorage.getItem('Z polecenia');
+    numberInne.innerHTML = localStorage.getItem('Inne');
+}
 
 items.forEach((item) => {
     item.addEventListener('click', () => {
@@ -63,5 +76,3 @@ const showFirstPage = () => {
 }
 
 button.addEventListener('click', showSecondPage);
-
-
