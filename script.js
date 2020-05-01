@@ -30,35 +30,7 @@ if (localStorage.getItem('Instagram') || localStorage.getItem('Facebook') || loc
 }
 
 items.forEach((item) => {
-    item.addEventListener('click', () => {
-        for(let i=0; i<localStorage.length; i++) {
-            let key = localStorage.key(i);
-            if (key === item.dataset.name) {
-                let number = +localStorage.getItem(key);
-                ++number;
-                localStorage.setItem(key,number);
-                numberInstagram.innerHTML = localStorage.getItem('Instagram');
-                numberFacebook.innerHTML = localStorage.getItem('Facebook');
-                numberGoogle.innerHTML = localStorage.getItem('Google');
-                numberZpolecenia.innerHTML = localStorage.getItem('Z polecenia');
-                numberInne.innerHTML = localStorage.getItem('Inne');
-            }
-          }
-         setTimeout(() => {
-            button.classList.add('disabled')
-            firstPage.classList.add('disabled');
-            modal.classList.remove('disabled');
-                setTimeout(() => {
-                button.classList.remove('disabled')
-                firstPage.classList.remove('disabled');
-                modal.classList.add('disabled');
-            }, 5000)
-          }, 100)
-    })
-})
-
-items.forEach((item) => {
-    item.addEventListener('touchend', () => {
+    item.addEventListener('touchstart', () => {
         for(let i=0; i<localStorage.length; i++) {
             let key = localStorage.key(i);
             if (key === item.dataset.name) {
@@ -91,11 +63,9 @@ const showSecondPage = () => {
     secondPage.classList.remove('disabled');
     button.innerHTML = 'BACK'
 
-    button.removeEventListener('click', showSecondPage);
-    button.removeEventListener('touchend', showSecondPage);
+    button.removeEventListener('touchstart', showSecondPage);
 
-    button.addEventListener('click', showFirstPage);
-    button.addEventListener('touchend', showFirstPage);
+    button.addEventListener('touchstart', showFirstPage);
 }
 
 const showFirstPage = () => {
@@ -104,13 +74,9 @@ const showFirstPage = () => {
     secondPage.classList.add('disabled');
     button.innerHTML = 'INFO'
 
-    button.addEventListener('click', showSecondPage);
-    button.addEventListener('touchend', showSecondPage);
+    button.addEventListener('touchstart', showSecondPage);
 
-    button.removeEventListener('click', showFirstPage);
-    button.removeEventListener('touchend', showFirstPage);
+    button.removeEventListener('touchstart', showFirstPage);
 }
 
-
-button.addEventListener('click', showSecondPage);
-button.addEventListener('touchend', showSecondPage);
+button.addEventListener('touchstart', showSecondPage);
