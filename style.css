@@ -10,7 +10,7 @@ body {
 }
 
 .header {
-    margin: 0 auto;
+    margin: 30px auto;
     padding: 1rem;
 }
 
@@ -20,8 +20,8 @@ body {
 }
 
 .header__img-wrap {
-    width: 300px;
-    height: 220px;
+    width: 400px;
+    height: 320px;
     margin: 0 auto;
     background-color: #ffecc7;
     background-image: url('./images/Logo.png');
@@ -30,7 +30,7 @@ body {
 }
 
 .main {
-    margin: 15px auto;
+    margin: 35px auto;
 }
 
 .main__title {
@@ -124,7 +124,7 @@ body {
     position: absolute;
     left: 0.5%;
     top: 1%;
-    background-color: blue;
+    background-color: rgb(72, 133, 247);
     cursor: pointer;
     padding: 0.3em 1.2em;
     margin: 0 0.1em 0.1em 0;
@@ -146,6 +146,10 @@ body {
 
     .red {
         background-color:#f14e4e;
+    }
+    
+    .heart {
+        color: red;
     }
 
     
