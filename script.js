@@ -31,6 +31,7 @@ if (localStorage.getItem('Instagram') || localStorage.getItem('Facebook') || loc
 }
 
 items.forEach(function (item) {
+  if (item.addEventListener) {
   item.addEventListener('click', function () {
     for (var i = 0; i < localStorage.length; i++) {
       var key = localStorage.key(i);
@@ -58,6 +59,35 @@ items.forEach(function (item) {
       }, 4000);
     }, 100);
   });
+} else if (item.attachEvent) {
+  item.attachEvent('onclick', function () {
+    for (var i = 0; i < localStorage.length; i++) {
+      var key = localStorage.key(i);
+
+      if (key === item.dataset.name) {
+        var number = +localStorage.getItem(key);
+        ++number;
+        localStorage.setItem(key, number);
+        numberInstagram.innerHTML = localStorage.getItem('Instagram');
+        numberFacebook.innerHTML = localStorage.getItem('Facebook');
+        numberGoogle.innerHTML = localStorage.getItem('Google');
+        numberZpolecenia.innerHTML = localStorage.getItem('Z polecenia');
+        numberInne.innerHTML = localStorage.getItem('Inne');
+      }
+    }
+
+    setTimeout(function () {
+      button.classList.add('disabled');
+      firstPage.classList.add('disabled');
+      modal.classList.remove('disabled');
+      setTimeout(function () {
+        button.classList.remove('disabled');
+        firstPage.classList.remove('disabled');
+        modal.classList.add('disabled');
+      }, 4000);
+    }, 100);
+  });
+}
 });
 
 var showSecondPage = function showSecondPage() {
@@ -65,8 +95,19 @@ var showSecondPage = function showSecondPage() {
   firstPage.classList.add('disabled');
   secondPage.classList.remove('disabled');
   button.innerHTML = 'BACK';
-  button.removeEventListener('click', showSecondPage);
-  button.addEventListener('click', showFirstPage);
+
+  if (button.removeEventListener) {
+    button.removeEventListener('click', showSecondPage);
+  } else if (button.detachEvent) {
+    button.detachEvent('onclick', showSecondPage)
+  }
+
+    if (button.addEventListener) {
+      button.addEventListener('click', showFirstPage);
+    } else if (button.attachEvent) {
+    button.attachEvent("onclick", showFirstPage)
+  }
+
 };
 
 var showFirstPage = function showFirstPage() {
@@ -74,8 +115,23 @@ var showFirstPage = function showFirstPage() {
   firstPage.classList.remove('disabled');
   secondPage.classList.add('disabled');
   button.innerHTML = 'INFO';
-  button.addEventListener('click', showSecondPage);
-  button.removeEventListener('click', showFirstPage);
+
+  if (button.addEventListener) {
+    button.addEventListener('click', showSecondPage);
+  } else if (button.attachEvent) {
+  button.attachEvent("onclick", showSecondPage)
+}
+
+  if (button.removeEventListener) {
+    button.removeEventListener('click', showFirstPage);
+  } else if (button.detachEvent) {
+    button.detachEvent('onclick', showFirstPage)
+  }
+
 };
 
-button.addEventListener('click', showSecondPage);
+if (button.addEventListener) {
+  button.addEventListener('click', showSecondPage);
+} else if (button.attachEvent) {
+  button.attachEvent("onclick", showSecondPage)
+}
