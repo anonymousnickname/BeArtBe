@@ -55,7 +55,7 @@ items.forEach(function (item) {
         button.classList.remove('disabled');
         firstPage.classList.remove('disabled');
         modal.classList.add('disabled');
-      }, 5000);
+      }, 4000);
     }, 100);
   });
 });
