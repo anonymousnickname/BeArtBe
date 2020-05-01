@@ -72,10 +72,9 @@ body {
     padding: 15px 25px;
 }
 
-.list-item:hover {
+.list-item:focus {
     transition: all 0.3s ease-out;
     background-color: pink;
-   
 }
 
 .list-item:focus .list-text {
