@@ -78,7 +78,7 @@ body {
    
 }
 
-.list-item:hover .list-text {
+.list-item:focus .list-text {
     transition: all 0.3s ease-out;
     color: white;
 }
