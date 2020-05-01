@@ -1,4 +1,5 @@
 'use strict'
+
 const items = document.querySelectorAll('.list-items');
 const modal = document.querySelector('#modal');
 const firstPage = document.querySelector('.first-page');
@@ -30,7 +31,7 @@ if (localStorage.getItem('Instagram') || localStorage.getItem('Facebook') || loc
 }
 
 items.forEach((item) => {
-    item.addEventListener('touchstart', () => {
+    item.addEventListener('click', () => {
         for(let i=0; i<localStorage.length; i++) {
             let key = localStorage.key(i);
             if (key === item.dataset.name) {
@@ -63,9 +64,9 @@ const showSecondPage = () => {
     secondPage.classList.remove('disabled');
     button.innerHTML = 'BACK'
 
-    button.removeEventListener('touchstart', showSecondPage);
+    button.removeEventListener('click', showSecondPage);
 
-    button.addEventListener('touchstart', showFirstPage);
+    button.addEventListener('click', showFirstPage);
 }
 
 const showFirstPage = () => {
@@ -74,9 +75,9 @@ const showFirstPage = () => {
     secondPage.classList.add('disabled');
     button.innerHTML = 'INFO'
 
-    button.addEventListener('touchstart', showSecondPage);
+    button.addEventListener('click', showSecondPage);
 
-    button.removeEventListener('touchstart', showFirstPage);
+    button.removeEventListener('click', showFirstPage);
 }
 
-button.addEventListener('touchstart', showSecondPage);
+button.addEventListener('click', showSecondPage);
