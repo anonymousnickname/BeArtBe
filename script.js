@@ -57,13 +57,45 @@ items.forEach((item) => {
     })
 })
 
+items.forEach((item) => {
+    item.addEventListener('touchend', () => {
+        for(let i=0; i<localStorage.length; i++) {
+            let key = localStorage.key(i);
+            if (key === item.dataset.name) {
+                let number = +localStorage.getItem(key);
+                ++number;
+                localStorage.setItem(key,number);
+                numberInstagram.innerHTML = localStorage.getItem('Instagram');
+                numberFacebook.innerHTML = localStorage.getItem('Facebook');
+                numberGoogle.innerHTML = localStorage.getItem('Google');
+                numberZpolecenia.innerHTML = localStorage.getItem('Z polecenia');
+                numberInne.innerHTML = localStorage.getItem('Inne');
+            }
+          }
+         setTimeout(() => {
+            button.classList.add('disabled')
+            firstPage.classList.add('disabled');
+            modal.classList.remove('disabled');
+                setTimeout(() => {
+                button.classList.remove('disabled')
+                firstPage.classList.remove('disabled');
+                modal.classList.add('disabled');
+            }, 5000)
+          }, 100)
+    })
+})
+
 const showSecondPage = () => {
     button.classList.add('red')
     firstPage.classList.add('disabled');
     secondPage.classList.remove('disabled');
     button.innerHTML = 'BACK'
+
     button.removeEventListener('click', showSecondPage);
+    button.removeEventListener('touchend', showSecondPage);
+
     button.addEventListener('click', showFirstPage);
+    button.addEventListener('touchend', showFirstPage);
 }
 
 const showFirstPage = () => {
@@ -71,8 +103,14 @@ const showFirstPage = () => {
     firstPage.classList.remove('disabled');
     secondPage.classList.add('disabled');
     button.innerHTML = 'INFO'
+
     button.addEventListener('click', showSecondPage);
+    button.addEventListener('touchend', showSecondPage);
+
     button.removeEventListener('click', showFirstPage);
+    button.removeEventListener('touchend', showFirstPage);
 }
 
+
 button.addEventListener('click', showSecondPage);
+button.addEventListener('touchend', showSecondPage);
