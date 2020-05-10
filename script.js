@@ -11,23 +11,23 @@ var numberGoogle = document.querySelector('#numberGoogle');
 var numberZpolecenia = document.querySelector('#numberZpolecenia');
 var numberInne = document.querySelector('#numberInne');
 
-if (localStorage.getItem('Instagram') || localStorage.getItem('Facebook') || localStorage.getItem('Google') || localStorage.getItem('Z polecenia') || localStorage.getItem('Inne')) {
-  numberInstagram.innerHTML = localStorage.getItem('Instagram');
-  numberFacebook.innerHTML = localStorage.getItem('Facebook');
-  numberGoogle.innerHTML = localStorage.getItem('Google');
-  numberZpolecenia.innerHTML = localStorage.getItem('Z polecenia');
-  numberInne.innerHTML = localStorage.getItem('Inne');
+if (localStorage.getItem('InstagramStore') || localStorage.getItem('FacebookStore') || localStorage.getItem('GoogleStore') || localStorage.getItem('Z poleceniaStore') || localStorage.getItem('InneStore')) {
+  numberInstagram.innerHTML = localStorage.getItem('InstagramStore');
+  numberFacebook.innerHTML = localStorage.getItem('FacebookStore');
+  numberGoogle.innerHTML = localStorage.getItem('GoogleStore');
+  numberZpolecenia.innerHTML = localStorage.getItem('Z poleceniaStore');
+  numberInne.innerHTML = localStorage.getItem('InneStore');
 } else {
-  localStorage.setItem('Instagram', numberInstagram.dataset.number);
-  localStorage.setItem('Facebook', numberFacebook.dataset.number);
-  localStorage.setItem('Google', numberGoogle.dataset.number);
-  localStorage.setItem('Z polecenia', numberZpolecenia.dataset.number);
-  localStorage.setItem('Inne', numberInne.dataset.number);
-  numberInstagram.innerHTML = localStorage.getItem('Instagram');
-  numberFacebook.innerHTML = localStorage.getItem('Facebook');
-  numberGoogle.innerHTML = localStorage.getItem('Google');
-  numberZpolecenia.innerHTML = localStorage.getItem('Z polecenia');
-  numberInne.innerHTML = localStorage.getItem('Inne');
+  localStorage.setItem('InstagramStore', numberInstagram.dataset.number);
+  localStorage.setItem('FacebookStore', numberFacebook.dataset.number);
+  localStorage.setItem('GoogleStore', numberGoogle.dataset.number);
+  localStorage.setItem('Z poleceniaStore', numberZpolecenia.dataset.number);
+  localStorage.setItem('InneStore', numberInne.dataset.number);
+  numberInstagram.innerHTML = localStorage.getItem('InstagramStore');
+  numberFacebook.innerHTML = localStorage.getItem('FacebookStore');
+  numberGoogle.innerHTML = localStorage.getItem('GoogleStore');
+  numberZpolecenia.innerHTML = localStorage.getItem('Z poleceniaStore');
+  numberInne.innerHTML = localStorage.getItem('InneStore');
 }
 
 items.forEach(function (item) {
@@ -40,11 +40,11 @@ items.forEach(function (item) {
         var number = +localStorage.getItem(key);
         ++number;
         localStorage.setItem(key, number);
-        numberInstagram.innerHTML = localStorage.getItem('Instagram');
-        numberFacebook.innerHTML = localStorage.getItem('Facebook');
-        numberGoogle.innerHTML = localStorage.getItem('Google');
-        numberZpolecenia.innerHTML = localStorage.getItem('Z polecenia');
-        numberInne.innerHTML = localStorage.getItem('Inne');
+        numberInstagram.innerHTML = localStorage.getItem('InstagramStore');
+        numberFacebook.innerHTML = localStorage.getItem('FacebookStore');
+        numberGoogle.innerHTML = localStorage.getItem('GoogleStore');
+        numberZpolecenia.innerHTML = localStorage.getItem('Z poleceniaStore');
+        numberInne.innerHTML = localStorage.getItem('InneStore');
       }
     }
 
@@ -68,11 +68,11 @@ items.forEach(function (item) {
         var number = +localStorage.getItem(key);
         ++number;
         localStorage.setItem(key, number);
-        numberInstagram.innerHTML = localStorage.getItem('Instagram');
-        numberFacebook.innerHTML = localStorage.getItem('Facebook');
-        numberGoogle.innerHTML = localStorage.getItem('Google');
-        numberZpolecenia.innerHTML = localStorage.getItem('Z polecenia');
-        numberInne.innerHTML = localStorage.getItem('Inne');
+        numberInstagram.innerHTML = localStorage.getItem('InstagramStore');
+        numberFacebook.innerHTML = localStorage.getItem('FacebookStore');
+        numberGoogle.innerHTML = localStorage.getItem('GoogleStore');
+        numberZpolecenia.innerHTML = localStorage.getItem('Z poleceniaStore');
+        numberInne.innerHTML = localStorage.getItem('InneStore');
       }
     }
 
@@ -84,7 +84,7 @@ items.forEach(function (item) {
         button.classList.remove('disabled');
         firstPage.classList.remove('disabled');
         modal.classList.add('disabled');
-      }, 5000);
+      }, 2500);
     }, 100);
   });
 }
